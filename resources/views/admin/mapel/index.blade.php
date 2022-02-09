@@ -1,10 +1,19 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+  .po{
+    font-family: Poppins;
+  }
+  </style>
+  
+
+
 @extends('template_backend.home')
 @section('heading', 'Data Mapel')
 @section('page')
   <li class="breadcrumb-item active">Data Mapel</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
@@ -40,7 +49,7 @@
                         <form action="{{ route('mapel.destroy', $data->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <a href="{{ route('mapel.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
+                            <a href="{{ route('mapel.edit', Crypt::encrypt($data->id)) }}"  class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a> &nbsp;
                             <button class="btn btn-danger btn-sm"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
                         </form>
                     </td>
@@ -56,7 +65,7 @@
 <!-- /.col -->
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-md tambah-mapel" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-md tambah-mapel po" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
     <div class="modal-header">
@@ -75,9 +84,9 @@
                   <input type="text" id="nama_mapel" name="nama_mapel" class="form-control @error('nama_mapel') is-invalid @enderror" placeholder="{{ __('Nama Mata Pelajaran') }}">
                 </div>
                 <div class="form-group">
-                  <label for="paket_id">Paket</label>
+                  <label for="paket_id">Kelas</label>
                   <select id="paket_id" name="paket_id" class="form-control @error('paket_id') is-invalid @enderror select2bs4">
-                    <option value="">-- Pilih Paket Mapel --</option>
+                    <option value="">-- Pilih Kelas Mapel --</option>
                     <option value="9">Semua</option>
                     @foreach ($paket as $data)
                       <option value="{{ $data->id }}">{{ $data->ket }}</option>
@@ -88,9 +97,8 @@
                     <label for="kelompok">Kelompok</label>
                     <select id="kelompok" name="kelompok" class="select2bs4 form-control @error('kelompok') is-invalid @enderror">
                       <option value="">-- Pilih Kelompok Mapel --</option>
-                      <option value="A">Pelajaran Umum</option>
-                      <option value="B">Pelajaran Khusus</option>
-                      <option value="C">Pelajaran Keahlian</option>
+                      <option value="A">Kelompok A</option>
+                      <option value="B">Kelompok B</option>
                     </select>
                 </div>
               </div>

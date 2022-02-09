@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Ubah Password')
 @section('page')
@@ -5,7 +12,7 @@
   <li class="breadcrumb-item active">Ubah Password</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">

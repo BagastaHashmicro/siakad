@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Profile')
 @section('page')
   <li class="breadcrumb-item active">User Profile</li>
 @endsection
 @section('content')
-<div class="col-12">
+<div class="col-12 po">
     <div class="row">
         <div class="col-5">
             <!-- Profile Image -->
@@ -37,7 +44,7 @@
                     @elseif (Auth::user()->role == 'Siswa')
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>No INduk</b> <a class="float-right">{{ Auth::user()->no_induk }}</a>
+                                <b>No Induk</b> <a class="float-right">{{ Auth::user()->no_induk }}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>NIS</b> <a class="float-right">{{ Auth::user()->siswa(Auth::user()->no_induk)->nis }}</a>
@@ -53,7 +60,7 @@
 
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">Pengaturan Akun</h3>
+                    <h3 class="card-title">&nbsp; &nbsp;Pengaturan Akun</h3>
                 </div>
                 <div class="card-body">
                     <table class="table" style="margin-top: -21px;">
@@ -93,7 +100,7 @@
                         <p class="text-muted">{{ Auth::user()->guru(Auth::user()->id_card)->kode }}</p>
                         <hr>
                     @elseif (Auth::user()->role == 'Siswa')
-                        <strong><i class="fas fa-home mr-1"></i> Tempat Lahir</strong>
+                        <strong><i class="fas fa-home mr-1"></i> Kelas</strong>
                         <p class="text-muted">{{ Auth::user()->siswa(Auth::user()->no_induk)->kelas->nama_kelas }}</p>
                         <hr>
                     @else

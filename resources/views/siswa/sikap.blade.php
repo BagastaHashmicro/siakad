@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Nilai Rapot')
 @section('page')
@@ -85,9 +92,15 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->nama_mapel }}</td>
-                                <td class="ctr">{{ $data->sikap($data->id)['sikap_1'] }}</td>
-                                <td class="ctr">{{ $data->sikap($data->id)['sikap_2'] }}</td>
-                                <td class="ctr">{{ $data->sikap($data->id)['sikap_3'] }}</td>
+                                <td class="ctr">{{ isset($data->sikap($data->id)['sikap_1']) ? $data->sikap($data->id)['sikap_1']
+                                    : ''
+                                   }}</td>
+                                    <td class="ctr">{{ isset($data->sikap($data->id)['sikap_2']) ? $data->sikap($data->id)['sikap_2']
+                                        : ''
+                                       }}</td>
+                                <td class="ctr">{{ isset($data->sikap($data->id)['sikap_3']) 
+                                ? $data->sikap($data->id)['sikap_3'] : ''
+                                }}</td>
                             </tr>
                         @endforeach
                     </tbody>

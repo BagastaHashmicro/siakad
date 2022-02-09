@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Show Ulangan')
 @section('page')
   <li class="breadcrumb-item active">Show Ulangan</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">
@@ -70,10 +77,10 @@
                         <tr>
                             <th class="ctr">No.</th>
                             <th>Mata Pelajaran</th>
-                            <th class="ctr">ULHA 1</th>
-                            <th class="ctr">ULHA 2</th>
+                            <th class="ctr">UH 1</th>
+                            <th class="ctr">UH 2</th>
                             <th class="ctr">UTS</th>
-                            <th class="ctr">ULHA 3</th>
+                            <th class="ctr">UH 3</th>
                             <th class="ctr">UAS</th>
                         </tr>
                     </thead>
@@ -87,12 +94,22 @@
                                         $array = array('mapel' => $val, 'siswa' => $siswa->id);
                                         $jsonData = json_encode($array);
                                     @endphp
-                                    <td class="ctr">{{ $data->cekUlangan($jsonData)['ulha_1'] }}</td>
-                                    <td class="ctr">{{ $data->cekUlangan($jsonData)['ulha_2'] }}</td>
-                                    <td class="ctr">{{ $data->cekUlangan($jsonData)['uts'] }}</td>
-                                    <td class="ctr">{{ $data->cekUlangan($jsonData)['ulha_3'] }}</td>
-                                    <td class="ctr">{{ $data->cekUlangan($jsonData)['uas'] }}</td>
-                                </tr>
+                                    <td class="ctr">{{ isset($data->cekUlangan($jsonData)['ulha_1']) ? $data->cekUlangan($jsonData)['ulha_1']
+                                        : ''
+                                    }}</td>
+                                     <td class="ctr">{{ isset($data->cekUlangan($jsonData)['ulha_2']) ? $data->cekUlangan($jsonData)['ulha_2']
+                                        : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekUlangan($jsonData)['uts'])  ? $data->cekUlangan($jsonData)['uts']
+                                        : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekUlangan($jsonData)['ulha_3']) ? $data->cekUlangan($jsonData)['ulha_3']  
+                                        : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekUlangan($jsonData)['uas']) ? $data->cekUlangan($jsonData)['uas']
+                                        : ''
+                                       }}</td>
+                                   </tr>
                             @endforeach
                     </tbody>
                 </table>

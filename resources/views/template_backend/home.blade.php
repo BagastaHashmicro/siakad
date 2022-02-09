@@ -7,6 +7,8 @@
     <title>Sistem Informasi Akademik Sekolah</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Poppins -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
@@ -52,6 +54,9 @@
     <link rel="shrotcut icon" href="{{ asset('img/favicon.ico') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <style>
+        .po{
+             font-family: Poppins;
+        }
         .ctr {
             text-align: center !important;
         }
@@ -113,11 +118,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">@yield('heading')</h1>
+                <h1 class="m-0 text-dark po">@yield('heading')</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}"><i class="nav-icon fas fa-home"></i> &nbsp; Home</a></li>
+                <li class="breadcrumb-item po"><a href="{{ url('/') }}"><i class="nav-icon fas fa-home"></i> &nbsp; Home</a></li>
                 @yield('page')
                 </ol>
             </div><!-- /.col -->
@@ -127,7 +132,7 @@
         <!-- /.content-header -->
         
         <!-- Main content -->
-        <section class="content">
+        <section class="content po">
             <div class="container-fluid">
                 <div class="row">
                     @yield('content')

@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+    .po{
+        font-family: Poppins;
+    }
+    </style>
+    
 @extends('template_backend.home')
 @section('heading', 'Dashboard')
 @section('page')
@@ -82,7 +89,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <p class="d-flex flex-column">
-                        <span class="text-bold text-lg">DataGuru</span>
+                        <span class="text-bold text-lg">Data Guru</span>
                     </p>
                     <p class="ml-auto d-flex flex-column text-right">
                         <span class="text-success">
@@ -144,7 +151,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <p class="d-flex flex-column">
-                        <span class="text-bold text-lg">Kelas / Paket Keahlian </span>
+                        <span class="text-bold text-lg">Kelas </span>
                     </p>
                     <p class="ml-auto d-flex flex-column text-right">
                         <span class="text-success">
@@ -161,14 +168,9 @@
                         </div>
                         <div class="col-md-4">
                             <ul class="chart-legend clearfix">
-                                <li><i class="far fa-circle" style="color: #d4c148"></i> Bisnis kontruksi dan Properti</li>
-                                <li><i class="far fa-circle" style="color: #ba6906"></i> Desain Permodelan dan Informasi Bangunan</li>
-                                <li><i class="far fa-circle" style="color: #ff990a"></i> Elektronika Industri</li>
-                                <li><i class="far fa-circle" style="color: #00a352"></i> Otomasi Industri</li>
-                                <li><i class="far fa-circle" style="color: #2cabe6"></i> Teknik dan Bisnis Sepeda Motor</li>
-                                <li><i class="far fa-circle" style="color: #999999"></i> Rekayasa Perangkat Lunak</li>
-                                <li><i class="far fa-circle" style="color: #0b2e75"></i> Teknik Pemesinan</li>
-                                <li><i class="far fa-circle" style="color: #7980f7"></i> Teknik Pengelasan</li>
+                                <li><i class="far fa-circle" style="color: red"></i> Kelas 7</li>
+                                <li><i class="far fa-circle" style="color: green"></i> Kelas 8</li>
+                                <li><i class="far fa-circle" style="color: blue"></i> Kelas 9</li>
                             </ul>
                         </div>
                     </div>
@@ -234,19 +236,14 @@
             var pieChartCanvasPaket = $('#pieChartPaket').get(0).getContext('2d')
             var pieDataPaket        = {
                 labels: [
-                    'Bisnis kontruksi dan Properti',
-                    'Desain Permodelan dan Informasi Bangunan',
-                    'Elektronika Industri',
-                    'Otomasi Industri',
-                    'Teknik dan Bisnis Sepeda Motor',
-                    'Rekayasa Perangkat Lunak',
-                    'Teknik Pemesinan',
-                    'Teknik Pengelasan',
+                    'Kelas Tujuh ',
+                    'Kelas Delapan ',
+                    'Kelas Sembilan ',
                 ],
                 datasets: [
                     {
-                    data: [{{ $bkp }}, {{ $dpib }}, {{ $ei }}, {{ $oi }}, {{ $tbsm }}, {{ $rpl }}, {{ $tpm }}, {{ $las }}],
-                    backgroundColor : ['#d4c148', '#ba6906', '#ff990a', '#00a352', '#2cabe6', '#999999', '#0b2e75', '#7980f7'],
+                    data: [{{ $bkp }}, {{ $dpib }}, {{ $ei }}],
+                    backgroundColor : ['red', 'green', 'blue'],
                     }
                 ]
             }

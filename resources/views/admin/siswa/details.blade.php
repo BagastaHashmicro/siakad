@@ -1,3 +1,9 @@
+<style>
+.tab {
+   margin-left: 40px;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Details Siswa')
 @section('page')
@@ -8,16 +14,18 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('siswa.kelas', Crypt::encrypt($siswa->kelas_id)) }}" class="btn btn-default btn-sm"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</a>
+            <a href="{{ route('siswa.kelas', Crypt::encrypt($siswa->kelas_id)) }}" class="btn btn-default btn-sm po"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</a>
         </div>
-        <div class="card-body">
+        <div class="card-body po">
             <div class="row no-gutters ml-2 mb-2 mr-2">
                 <div class="col-md-4">
                     <img src="{{ asset($siswa->foto) }}" class="card-img img-details" alt="...">
                 </div>
                 <div class="col-md-1 mb-4"></div>
                 <div class="col-md-7">
-                    <h5 class="card-title card-text mb-2">Nama : {{ $siswa->nama_siswa }}</h5>
+                    <br> <br> <br> <br>
+                    
+                    <h5 class="card-title card-text mb-2" >Nama : {{ $siswa->nama_siswa }}</h5>
                     <h5 class="card-title card-text mb-2">No. Induk : {{ $siswa->no_induk }}</h5>
                     <h5 class="card-title card-text mb-2">NIS : {{ $siswa->nis }}</h5>
                     <h5 class="card-title card-text mb-2">Kelas : {{ $siswa->kelas->nama_kelas }}</h5>

@@ -1,10 +1,19 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+  .po{
+    font-family: Poppins;
+  }
+  
+  </style>
+  
+
 @extends('template_backend.home')
 @section('heading', 'Data User')
 @section('page')
   <li class="breadcrumb-item active">Data User</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
@@ -29,7 +38,7 @@
                     <td>{{ $role }}</td>
                     <td>{{ $data->count() }}</td>
                     <td>
-                      <a href="{{ route('user.show', Crypt::encrypt($role)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                      <a href="{{ route('user.show', Crypt::encrypt($role)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Detail</a>
                     </td>
                   </tr>
                 @endforeach
@@ -40,7 +49,7 @@
 </div>
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-md tambah-user" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-md tambah-user po" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
     <div class="modal-header">

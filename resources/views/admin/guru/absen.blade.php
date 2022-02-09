@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Absensi Guru')
 @section('page')
     <li class="breadcrumb-item active">Absensi guru</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-body">
           <table id="example1" class="table table-bordered table-striped table-hover">
@@ -21,7 +28,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->nama_guru }}</td>
                         <td>
-                            <a href="{{ route('guru.kehadiran', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                            <a href="{{ route('guru.kehadiran', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Details</a>
                         </td>
                     </tr>
                 @endforeach

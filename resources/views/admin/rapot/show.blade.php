@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Show Rapot')
 @section('page')
   <li class="breadcrumb-item active">Show Rapot</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">
@@ -92,12 +99,24 @@
                                         $array = array('mapel' => $val, 'siswa' => $siswa->id);
                                         $jsonData = json_encode($array);
                                     @endphp
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['p_nilai'] }}</td>
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['p_predikat'] }}</td>
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['p_deskripsi'] }}</td>
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['k_nilai'] }}</td>
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['k_predikat'] }}</td>
-                                    <td class="ctr">{{ $data->cekRapot($jsonData)['k_deskripsi'] }}</td>
+                                  <td class="ctr">{{ isset($data->cekRapot($jsonData)['p_nilai']) ? $data->cekRapot($jsonData)['p_nilai']
+                                    : ''
+                                   }}</td>
+                                    <td class="ctr">{{ isset($data->cekRapot($jsonData)['p_predikat']) ? $data->cekRapot($jsonData)['p_predikat']
+                                     : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekRapot($jsonData)['p_deskripsi']) ? $data->cekRapot($jsonData)['p_deskripsi']
+                                     : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekRapot($jsonData)['k_nilai']) ? $data->cekRapot($jsonData)['k_nilai']
+                                     : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekRapot($jsonData)['k_predikat']) ? $data->cekRapot($jsonData)['k_predikat']
+                                     : ''
+                                    }}</td>
+                                    <td class="ctr">{{ isset($data->cekRapot($jsonData)['k_deskripsi']) ? $data->cekRapot($jsonData)['k_deskripsi']
+                                     : ''
+                                    }}</td>
                                 </tr>
                             @endforeach
                     </tbody>

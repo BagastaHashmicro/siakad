@@ -1,33 +1,40 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Data Guru')
 @section('page')
   <li class="breadcrumb-item active">Data Guru</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
                 <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">
                     <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Data Guru
-                </button>
-                <a href="{{ route('guru.export_excel') }}" class="btn btn-success btn-sm my-3" target="_blank"><i class="nav-icon fas fa-file-export"></i> &nbsp; EXPORT EXCEL</a>
+                </button>&nbsp;
+                <a href="{{ route('guru.export_excel') }}" class="btn btn-success btn-sm my-3" target="_blank"><i class="nav-icon fas fa-file-export"></i> &nbsp; EXPORT EXCEL</a> &nbsp;
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#importExcel">
                     <i class="nav-icon fas fa-file-import"></i> &nbsp; IMPORT EXCEL
-                </button>
+                </button> &nbsp;
                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#dropTable">
                     <i class="nav-icon fas fa-minus-circle"></i> &nbsp; Drop
-                </button>
+                </button> &nbsp;
             </h3>
         </div>
-        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade po" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<form method="post" action="{{ route('guru.import_excel') }}" enctype="multipart/form-data">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
 						</div>
-						<div class="modal-body">
+						<div class="modal-body po">
 							@csrf
                             <div class="card card-outline card-primary">
                                 <div class="card-header">
@@ -88,7 +95,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->nama_mapel }}</td>
                         <td>
-                            <a href="{{ route('guru.mapel', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                            <a href="{{ route('guru.mapel', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Detail</a>
                         </td>
                     </tr>
                 @endforeach
@@ -103,12 +110,12 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
       <div class="modal-header">
-          <h4 class="modal-title">Tambah Data Guru</h4>
+          <h4 class="modal-title po">Tambah Data Guru</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body po">
           <form action="{{ route('guru.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -187,8 +194,8 @@
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
-              <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
+              <button type="button" class="btn btn-default po" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
+              <button type="submit" class="btn btn-primary po"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
           </form>
       </div>
       </div>

@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Nilai Rapot')
 @section('page')
   <li class="breadcrumb-item active">Nilai Rapot</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">
@@ -72,10 +79,10 @@
                         <tr>
                             <th class="ctr">No.</th>
                             <th>Mata Pelajaran</th>
-                            <th class="ctr">ULHA 1</th>
-                            <th class="ctr">ULHA 2</th>
+                            <th class="ctr">UH 1</th>
+                            <th class="ctr">UH 2</th>
                             <th class="ctr">UTS</th>
-                            <th class="ctr">ULHA 3</th>
+                            <th class="ctr">UH 3</th>
                             <th class="ctr">UAS</th>
                         </tr>
                     </thead>

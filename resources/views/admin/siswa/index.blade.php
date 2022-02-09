@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Data Siswa')
 @section('page')
   <li class="breadcrumb-item active">Data Siswa</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
@@ -20,14 +27,14 @@
                 </button>
             </h3>
         </div>
-        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade PO" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<form method="post" action="{{ route('siswa.import_excel') }}" enctype="multipart/form-data">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
 						</div>
-						<div class="modal-body">
+						<div class="modal-body po">
 							@csrf
                             <div class="card card-outline card-primary">
                                 <div class="card-header">
@@ -55,7 +62,7 @@
 				</form>
 			</div>
 		</div>
-        <div class="modal fade" id="dropTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade po" id="dropTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<form method="post" action="{{ route('siswa.deleteAll') }}">
                     @csrf
@@ -73,7 +80,7 @@
 			</div>
 		</div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body po">
           <table id="example1" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
@@ -88,7 +95,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->nama_kelas }}</td>
                         <td>
-                            <a href="{{ route('siswa.kelas', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                            <a href="{{ route('siswa.kelas', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Detail</a>
                         </td>
                     </tr>
                 @endforeach
@@ -102,7 +109,7 @@
 <!-- /.col -->
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg po" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
       <div class="modal-header">
@@ -111,7 +118,7 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body po">
           <form action="{{ route('siswa.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -172,8 +179,8 @@
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
-              <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
+              <button type="button" class="btn btn-default po" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
+              <button type="submit" class="btn btn-primary po"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
           </form>
       </div>
       </div>

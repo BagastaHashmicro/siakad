@@ -1,7 +1,16 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+  .po{
+    font-family: Poppins;
+  }
+  </style>
+  
+
+
 @extends('layouts.app')
 @section('page', 'Login Authentication')
 @section('content')
-<div class="card-body login-card-body">
+<div class="card-body login-card-body po">
   <p class="login-box-msg">Sign in to start your session</p>
 
   <form action="{{ route('login') }}" method="post">
@@ -19,7 +28,7 @@
         </span>
       @enderror
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 po">
       <input id="password" type="password" placeholder="{{ __('Password') }}" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password" disabled>
       <div class="input-group-append">
         <div class="input-group-text">
@@ -32,7 +41,7 @@
         </span>
       @enderror
     </div>
-    <div class="row mb-1">
+    <div class="row mb-1 po">
       <div class="col-7">
         <div class="icheck-primary">
           <input type="checkbox" id="remember" class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} disabled>
@@ -49,14 +58,14 @@
     </div>
   </form>
 
-  <p class="mb-1">
+  <p class="mb-1 po">
     @if (Route::has('password.request'))
       <a class="text-center" href="{{ route('password.request') }}">
         {{ __('Lupa Password?') }}
       </a>
     @endif
   </p>
-  <p class="mb-0">
+  <p class="mb-0 po">
     <a class="text-center" href="{{ route('register') }}">Buat Akun Baru</a>
   </p>
 </div>

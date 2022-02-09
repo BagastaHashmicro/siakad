@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading')
     Jadwal Kelas {{ $kelas->nama_kelas }}
@@ -6,7 +13,7 @@
   <li class="breadcrumb-item active">Jadwal Kelas</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-body">
           <table id="example2" class="table table-bordered table-striped table-hover">

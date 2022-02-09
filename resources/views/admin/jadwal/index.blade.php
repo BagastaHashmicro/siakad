@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Data Jadwal')
 @section('page')
@@ -8,16 +15,16 @@
     <div class="card">
       <div class="card-header">
           <h3 class="card-title">
-              <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target=".tambah-jadwal">
+              <button type="button" class="btn btn-default btn-sm po" data-toggle="modal" data-target=".tambah-jadwal">
                   <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Data Jadwal
-              </button>
-              <a href="{{ route('jadwal.export_excel') }}" class="btn btn-success btn-sm my-3" target="_blank"><i class="nav-icon fas fa-file-export"></i> &nbsp; EXPORT EXCEL</a>
-              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#importExcel">
+              </button> &nbsp;
+              <a href="{{ route('jadwal.export_excel') }}" class="btn btn-success btn-sm my-3" target="_blank"><i class="nav-icon fas fa-file-export"></i> &nbsp; EXPORT EXCEL</a> &nbsp;
+              <button type="button" class="btn btn-primary btn-sm po" data-toggle="modal" data-target="#importExcel">
                   <i class="nav-icon fas fa-file-import"></i> &nbsp; IMPORT EXCEL
-              </button>
-              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#dropTable">
+              </button> &nbsp;
+              <button type="button" class="btn btn-danger btn-sm po" data-toggle="modal" data-target="#dropTable">
                   <i class="nav-icon fas fa-minus-circle"></i> &nbsp; Drop
-              </button>
+              </button> &nbsp;
           </h3>
       </div>
       <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,11 +32,11 @@
           <form method="post" action="{{ route('jadwal.import_excel') }}" enctype="multipart/form-data">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                <h5 class="modal-title po" id="exampleModalLabel">Import Excel</h5>
               </div>
-              <div class="modal-body">
+              <div class="modal-body po">
                 @csrf
-                  <div class="card card-outline card-primary">
+                  <div class="card card-outline card-primary po">
                       <div class="card-header">
                           <h5 class="modal-title">Petunjuk :</h5>
                       </div>
@@ -76,7 +83,7 @@
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body po">
           <table id="example1" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
@@ -91,7 +98,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $data->nama_kelas }}</td>
                     <td>
-                      <a href="{{ route('jadwal.show', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                      <a href="{{ route('jadwal.show', Crypt::encrypt($data->id)) }}" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Detail</a>
                     </td>
                   </tr>
                 @endforeach
@@ -114,7 +121,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body po">
           <form action="{{ route('jadwal.store') }}" method="post">
             @csrf
             <div class="row">
@@ -169,8 +176,8 @@
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
-              <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
+              <button type="button" class="btn btn-default po" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
+              <button type="submit" class="btn btn-primary po"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
           </form>
       </div>
       </div>

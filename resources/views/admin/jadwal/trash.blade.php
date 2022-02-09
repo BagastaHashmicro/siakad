@@ -1,16 +1,23 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Trash Jawdal')
 @section('page')
   <li class="breadcrumb-item active">Trash Jawdal</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card card-primary">
         <div class="card-header">
           <h3 class="card-title">Trash Data Jawdal</h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body po">
           <table id="example1" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>

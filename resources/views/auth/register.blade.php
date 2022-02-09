@@ -1,7 +1,15 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+  .po{
+    font-family: Poppins;
+  }
+  </style>
+  
+
 @extends('layouts.app')
 @section('page', 'Register Authentication')
 @section('content')
-<div class="card-body login-card-body">
+<div class="card-body login-card-body po">
   <p class="login-box-msg">Register a new membership</p>
 
   <form action="{{ route('register') }}" method="post">
@@ -19,7 +27,7 @@
         </span>
       @enderror
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 po">
       <select id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" autocomplete="role">
         <option value="">-- Select {{ __('Level User') }} --</option>
         <option value="Guru">Guru</option>
@@ -39,7 +47,7 @@
     </div>
     <div class="input-group" id="noId">
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 po">
       <input id="password" type="password" placeholder="{{ __('Password') }}" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
       <div class="input-group-append">
         <div class="input-group-text">
@@ -52,7 +60,7 @@
         </span>
       @enderror
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 po">
       <input id="password-confirm" type="password" placeholder="{{ __('Confirm Password') }}" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" autocomplete="new-password">
       <div class="input-group-append">
         <div class="input-group-text">
@@ -65,12 +73,12 @@
         </span>
       @enderror
     </div>
-    <div class="row mb-3">
+    <div class="row mb-3 po">
       <div class="col-6">
         <a href="{{ route('login') }}" class="text-center btn btn-light text-blue">Login Saja</a>
       </div>
       <!-- /.col -->
-      <div class="col-6 justify-content-end">
+      <div class="col-6 justify-content-end po">
         <button type="submit" class="btn btn-primary btn-block">{{ __('Register') }} &nbsp; <i class="nav-icon fas fa-sign-in-alt"></i></button>
       </div>
       <!-- /.col -->

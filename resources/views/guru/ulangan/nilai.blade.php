@@ -75,10 +75,10 @@
                         <tr>
                             <th class="ctr">No.</th>
                             <th>Nama Siswa</th>
-                            <th class="ctr">ULHA 1</th>
-                            <th class="ctr">ULHA 2</th>
+                            <th class="ctr">UH 1</th>
+                            <th class="ctr">UH 2</th>
                             <th class="ctr">UTS</th>
-                            <th class="ctr">ULHA 3</th>
+                            <th class="ctr">UH 3</th>
                             <th class="ctr">UAS</th>
                             <th class="ctr">Aksi</th>
                         </tr>

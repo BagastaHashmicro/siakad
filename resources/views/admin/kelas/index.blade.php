@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Data Kelas')
 @section('page')
   <li class="breadcrumb-item active">Data Kelas</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card">
         <div class="card-header">
           <h3 class="card-title">
@@ -14,7 +21,7 @@
           </h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body po">
           <table id="example1" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
@@ -67,17 +74,17 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body po">
         <form action="{{ route('kelas.store') }}" method="post">
           @csrf
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 po">
               <input type="hidden" id="id" name="id">
               <div class="form-group" id="form_nama"></div>
               <div class="form-group" id="form_paket"></div>
               <div class="form-group">
                 <label for="guru_id">Wali Kelas</label>
-                <select id="guru_id" name="guru_id" class="select2bs4 form-control @error('guru_id') is-invalid @enderror">
+                <select id="guru_id" name="guru_id" class="select2bs4 form-control po @error('guru_id') is-invalid @enderror">
                   <option value="">-- Pilih Wali Kelas --</option>
                   @foreach ($guru as $data)
                     <option value="{{ $data->id }}">{{ $data->nama_guru }}</option>
@@ -88,8 +95,8 @@
           </div>
         </div>
         <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
-            <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
+            <button type="button" class="btn btn-default po" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
+            <button type="submit" class="btn btn-primary po"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
       </form>
       </div>
     </div>
@@ -97,7 +104,7 @@
 </div>
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-lg view-siswa" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg view-siswa po" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -106,7 +113,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body po">
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
@@ -134,7 +141,7 @@
             <!-- /.col -->
           </div>
         </div>
-        <div class="modal-footer justify-content-between">
+        <div class="modal-footer justify-content-between po">
           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="nav-icon fas fa-arrow-left"></i> &nbsp; Kembali</button>
           <a id="link-siswa" href="#" class="btn btn-primary"><i class="nav-icon fas fa-download"></i> &nbsp; Download PDF</a>
         </div>
@@ -144,7 +151,7 @@
 </div>
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-xl view-jadwal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl view-jadwal po" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
     <div class="modal-header">
@@ -153,7 +160,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body po">
       <div class="row">
         <div class="col-md-12">
           <div class="card-body">
@@ -181,7 +188,7 @@
           <!-- /.col -->
         </div>
       </div>
-      <div class="modal-footer justify-content-between">
+      <div class="modal-footer justify-content-between po">
         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="nav-icon fas fa-arrow-left"></i> &nbsp; Kembali</button>
         <a id="link-jadwal" href="#" class="btn btn-primary"><i class="nav-icon fas fa-download"></i> &nbsp; Download PDF</a>
       </div>
@@ -201,9 +208,9 @@
       $('#nama_kelas').val('');
       $('#form_paket').html('');
       $('#form_paket').html(`
-        <label for="paket_id">Paket Keahlian</label>
+        <label for="paket_id">Kelas</label>
         <select id="paket_id" name="paket_id" class="select2bs4 form-control @error('paket_id') is-invalid @enderror">
-          <option value="">-- Pilih Paket Keahlian --</option>
+          <option value="">-- Pilih Kelas --</option>
           @foreach ($paket as $data)
             <option value="{{ $data->id }}">{{ $data->ket }}</option>
           @endforeach

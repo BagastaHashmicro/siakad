@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Show Nilai Sikap')
 @section('page')
   <li class="breadcrumb-item active">Show Nilai Sikap</li>
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">
@@ -87,9 +94,15 @@
                                         $array = array('mapel' => $data->id, 'siswa' => $siswa->id);
                                         $jsonData = json_encode($array);
                                     @endphp
-                                    <td class="ctr">{{ $data->cekSikap($jsonData)['sikap_1'] }}</td>
-                                    <td class="ctr">{{ $data->cekSikap($jsonData)['sikap_2'] }}</td>
-                                    <td class="ctr">{{ $data->cekSikap($jsonData)['sikap_3'] }}</td>
+                                     <td class="ctr">{{ isset($data->cekSikap($jsonData)['sikap_1']) ? $data->cekSikap($jsonData)['sikap_1']
+                                        : ''
+                                       }}</td>
+                                        <td class="ctr">{{ isset($data->cekSikap($jsonData)['sikap_2']) ? $data->cekSikap($jsonData)['sikap_2']
+                                            : ''
+                                           }}</td>
+                                    <td class="ctr">{{ isset($data->cekSikap($jsonData)['sikap_3']) ? $data->cekSikap($jsonData)['sikap_3']
+                                     : ''
+                                    }}</td>
                                 </tr>
                             @endforeach
                     </tbody>

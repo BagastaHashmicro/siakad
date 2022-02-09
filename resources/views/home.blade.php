@@ -1,3 +1,11 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<style>
+.po{
+  font-family: Poppins;
+}
+  </style>
+
 @extends('template_backend.home')
 @section('heading', 'Dashboard')
 @section('page')
@@ -9,7 +17,7 @@
         <div class="card-body">
               <table class="table table-striped table-hover">
                 <thead>
-                  <tr>
+                  <tr class="po">
                     <th>Jam Pelajaran</th>
                     <th>Mata Pelajaran</th>
                     <th>Kelas</th>
@@ -40,7 +48,7 @@
                       </tr>
                       @else
                       @foreach ($jadwal as $data)
-                        <tr>
+                        <tr class="po">
                           <td>{{ $data->jam_mulai.' - '.$data->jam_selesai }}</td>
                           <td>
                               <h5 class="card-title">{{ $data->mapel->nama_mapel }}</h5>
@@ -60,7 +68,7 @@
                       @endforeach
                   @endif
                   @elseif ($jam <= '07:00')
-                    <tr>
+                    <tr class="po">
                       <td colspan='5' style='background:#fff;text-align:center;font-weight:bold;font-size:18px;'>Jam Pelajaran Hari ini Akan Segera Dimulai!</td>
                     </tr>
                 @elseif (
@@ -70,19 +78,19 @@
                   $hari == '4' && $jam >= '16:00' ||
                   $hari == '5' && $jam >= '15:40'
                 )
-                  <tr>
+                  <tr class="po">
                     <td colspan='5' style='background:#fff;text-align:center;font-weight:bold;font-size:18px;'>Jam Pelajaran Hari ini Sudah Selesai!</td>
                   </tr>
                 @elseif ($hari == '0' || $hari == '6')
-                  <tr>
+                  <tr class="po">
                     <td colspan='5' style='background:#fff;text-align:center;font-weight:bold;font-size:18px;'>Sekalah Libur!</td>
                   </tr>
                 @elseif($hari == '1' && $jam >= '07:00' && $jam <= '07:30')
-                  <tr>
+                  <tr class="po">
                     <td colspan='5' style='background:#fff;text-align:center;font-weight:bold;font-size:18px;'>Waktunya Upacara Bendera!</td>
                   </tr>
                 @else
-                  <tr>
+                  <tr class="po">
                     <td colspan='5' style='background:#fff;text-align:center;font-weight:bold;font-size:18px;'>Tidak Ada Data Jadwal!</td>
                   </tr>
                 @endif
@@ -95,13 +103,16 @@
     <div class="col-md-6">
       <div class="card card-warning" style="min-height: 385px;">
         <div class="card-header">
-          <h3 class="card-title" style="color: white;">
+          <h3 class="card-title po" style="color: black;">
             Pengumuman
           </h3>
         </div>
         <div class="card-body">
-          <div class="tab-content p-0">
+          <div class="tab-content p-0 po">
+            <table class="table" style="margin-top: -21px; margin-bottom: -10px;">
+              
             {!! $pengumuman->isi !!}
+            </table>
           </div>
         </div>
       </div>
@@ -110,7 +121,7 @@
     <div class="col-md-6">
       <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">
+          <h3 class="card-title po">
             Keterangan :
           </h3>
         </div>
@@ -118,7 +129,7 @@
           <div class="tab-content p-0">
             <table class="table" style="margin-top: -21px; margin-bottom: -10px;">
               @foreach ($kehadiran as $data)
-                <tr>
+                <tr class="po">
                   <td>
                     <div style="width:30px;height:30px;background:#{{ $data->color }}"></div>
                   </td>

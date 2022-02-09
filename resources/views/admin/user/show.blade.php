@@ -1,3 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading')
   Data User @foreach ($role as $d => $data) {{ $d }} @endforeach
@@ -9,7 +16,7 @@
   @endforeach
 @endsection
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12 po">
   <div class="card">
     <div class="card-header">
         <h3 class="card-title">

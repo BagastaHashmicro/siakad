@@ -1,10 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.po{
+    font-family: Poppins;
+}
+</style>
+
 @extends('template_backend.home')
 @section('heading', 'Pengumuman')
 @section('page')
-  <li class="breadcrumb-item active">Pengumuman</li>
+  <li class="breadcrumb-item active po">Pengumuman</li>
 @endsection
 @section('content')
-    <div class="col-md-12">
+    <div class="col-md-12 po">
         <div class="card card-outline card-info">
             <form class="form-group" action="{{ route('admin.pengumuman.simpan') }}" method="post">
                 @csrf

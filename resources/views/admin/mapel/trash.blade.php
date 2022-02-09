@@ -1,3 +1,12 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+  .po{
+    font-family: Poppins;
+  }
+  
+  </style>
+  
+
 @extends('template_backend.home')
 @section('heading', 'Trash Mapel')
 @section('page')
@@ -7,7 +16,7 @@
 @php
     $no = 1;
 @endphp
-<div class="col-md-12">
+<div class="col-md-12 po">
     <div class="card card-primary">
         <div class="card-header">
           <h3 class="card-title">Trash Data Mapel</h3>
