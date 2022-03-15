@@ -103,7 +103,7 @@
                             @else
                                 <div class="alert alert-danger alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    <h5><i class="icon fas fa-check"></i> Tidak Baik !</h5>
+                                    <h5><i class="icon fas fa-times"></i> Tidak Baik !</h5>
                                     Students show lack of attitude.
                                 </div>
                             @endif

@@ -50,7 +50,7 @@
               <select id="kehadiran_id" type="text" class="form-control @error('kehadiran_id') is-invalid @enderror select2bs4" name="kehadiran_id">
                 <option value="">-- Pilih Keterangan Kehadiran --</option>
                 @foreach ($kehadiran as $data)
-                  <option value="{{ $data->id }}">{{ $data->ket }}</option>
+                  <option style="font-family:Poppins;" value="{{ $data->id }}">{{ $data->ket }}</option>
                 @endforeach
               </select>
             </div>

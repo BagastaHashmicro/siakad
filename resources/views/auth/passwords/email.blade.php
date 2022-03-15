@@ -1,13 +1,21 @@
+  <!-- Font Poppins -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <style>
+    .po{
+      font-family: Poppins;
+    }
+  </style>
 @extends('layouts.app')
-@section('page', 'Reset Password')
+@section('page', '')
 @section('content')
-<div class="card-body login-card-body">
-  <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+<div class="card-body login-card-body po" style="border-radius:20px;">
+  <h3 class="login-box-msg">Reset Password</h3> <br>
 
   <form action="{{ route('cek-email') }}" method="post">
     @csrf
     <div class="input-group mb-3">
-      <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="off" autofocus>
+      <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" required class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="off" autofocus>
       <div class="input-group-append">
         <div class="input-group-text">
           <span class="fas fa-envelope"></span>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +9,25 @@
   <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-  <link rel="shrotcut icon" href="{{ asset('img/favicon.ico') }}">
+  <link rel="shrotcut icon" href="{{ asset('img/favicon.png') }}">
+  <link rel="stylesheet" href="style.css">
+  <!-- ===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <style>
+    .kartu{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+    margin-left: 185px;
+
+  </style>
 </head>
 <body class="hold-transition login-page" style="background-image: url('{{ asset("img/wallup.jpg") }}'); background-size: cover; background-attachment: fixed;">
-  <div class="login-box">
-    <div class="login-logo">
+  <div class="login-box" style="width:480px; ">
+    <div class="login-logo" style="width:480px; ">
       <img src="{{ asset('img/logosiakad.png') }}" width="100%" alt="Logo Siakad SMP Negeri 213 Jakarta">
     </div>
 
@@ -28,7 +41,7 @@
 
     <footer style="color: white;">
       <marquee>
-          <strong style="color:black; font-family:Poppins">Copyright &copy; <script>document.write(new Date().getFullYear());</script>  &nbsp; &diams; <a href="#" style="color: black; font-family:Poppins">SMP Negeri 213 Jakarta</a> &diams;</strong>
+          <strong style="color:#335AC3; font-family:Poppins">Copyright &copy; <script>document.write(new Date().getFullYear());</script>  &nbsp; &diams; <a href="#" style="color: #335AC3; font-family:Poppins">SMP Negeri 213 Jakarta</a> &diams;</strong>
       </marquee>
     </footer>
   </div>
@@ -43,13 +56,11 @@
           var kel = $('#role option:selected').val();
           if (kel == "Guru") {
             $("#noId").addClass("mb-3");
-            $("#noId").html(`
-              <input id="nomer" type="text" maxlength="5" onkeypress="return inputAngka(event)" placeholder="No Id Card" class="form-control @error('nomer') is-invalid @enderror" name="nomer" autocomplete="nomer">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-id-card"></span>
-                </div>
-              </div>
+            
+            $("#noId").html(`&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+            
+              <input style="border: 2px solid #6697CC; border-radius: 10px;" id="nomer" type="text" maxlength="5" onkeypress=" return inputAngka(event)" placeholder="No Id Card" class="form-control @error('nomer') is-invalid @enderror" name="nomer" autocomplete="nomer">
+              <i class="uil uil-postcard kartu"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
               `);
             $("#pesan").html(`
               @error('nomer')
@@ -60,13 +71,10 @@
             `);
           } else if(kel == "Siswa") {
             $("#noId").addClass("mb-3");
-            $("#noId").html(`
-              <input id="nomer" type="text" placeholder="No Induk Siswa" class="form-control" name="nomer" autocomplete="nomer">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-id-card"></span>
-                </div>
-              </div>
+            $("#noId").html(`&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+              <input style="border: 2px solid #6697CC; border-radius: 10px;" id="nomer" type="text" placeholder="No Induk Siswa" class="form-control" name="nomer" autocomplete="nomer">
+              
+              <i class="uil uil-postcard kartu"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
             `);
             $("#pesan").html(`
               @error('nomer')

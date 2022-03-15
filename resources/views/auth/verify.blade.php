@@ -1,8 +1,18 @@
+  <!-- Font Poppins -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <style>
+    .po{
+      font-family: :Poppins;
+    }
+
+  </style>
+
 @extends('layouts.app')
 @section('page', 'Verify Your Email Address')
 @section('content')
-<div class="card-body login-card-body">
-  <p class="login-box-msg">A fresh verification link has been sent to your email address.</p>
+<div class="card-body login-card-body po">
+  <p class="login-box-msg po">A fresh verification link has been sent to your email address.</p>
 
   {{ __('Before proceeding, please check your email for a verification link.') }}
   {{ __('If you did not receive the email') }},
