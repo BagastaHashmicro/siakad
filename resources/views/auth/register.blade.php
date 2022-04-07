@@ -28,7 +28,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 0 20px;
+    margin: 0 0px;
 }
 
 .container .forms{
@@ -102,7 +102,6 @@ body{
 }
 
 .input-field input:is(:focus, :valid){
-    border-bottom-color: #4070f4;
 }
 
 .input-field i{
@@ -217,7 +216,6 @@ body{
             @enderror
             <div id="pesan"></div>
           </div>
-          <br>
           <div class="input-group" id="noId">
           </div>
           <div class="input-field">

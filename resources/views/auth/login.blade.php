@@ -35,7 +35,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 0 20px;
+    margin: 0 0px;
 }
 
 .container .forms{
@@ -209,7 +209,7 @@ body{
               </div>
               
               <div class="input-field">
-                <input id="password" type="password" placeholder="{{ __('Password') }}" class="password form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
+                <input id="password" type="password" placeholder="{{ __('Password') }}" class="password form-control @error('email') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
                 @error('password')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
